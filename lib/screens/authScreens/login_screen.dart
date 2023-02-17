@@ -26,7 +26,10 @@ class LoginScreen extends StatelessWidget {
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Icon(Icons.arrow_back_rounded),
+                      GestureDetector(
+                        child: Icon(Icons.arrow_back_rounded),
+                        onTap: () => Navigator.pop(context),
+                      ),
                       SizedBox(
                         height: Dimensions.heigth30,
                       ),
@@ -146,35 +149,87 @@ class LoginScreen extends StatelessWidget {
                 size: Dimensions.font26 / 2,
               ),
               Container(
-                height: Dimensions.heigth45 * 1.2,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(Dimensions.radius30),
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                          color: Color.fromARGB(255, 192, 192, 192),
-                          blurRadius: 5.0,
-                          offset: Offset(0, 3)),
-                      BoxShadow(
-                        color: Color.fromARGB(255, 192, 192, 192),
-                        offset: Offset(-1, 0),
+                child: Column(children: [
+                  Container(
+                    height: Dimensions.heigth45 * 1.2,
+                    decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.circular(Dimensions.radius30),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromARGB(255, 192, 192, 192),
+                              blurRadius: 5.0,
+                              offset: Offset(0, 3)),
+                          BoxShadow(
+                            color: Color.fromARGB(255, 192, 192, 192),
+                            offset: Offset(-1, 0),
+                          ),
+                          BoxShadow(
+                            color: Color.fromARGB(255, 192, 192, 192),
+                            offset: Offset(1, 0),
+                          )
+                        ]),
+                    margin: EdgeInsets.only(
+                        left: Dimensions.width15,
+                        right: Dimensions.width15,
+                        bottom: Dimensions.heigth15,
+                        top: Dimensions.heigth30),
+                    padding: EdgeInsets.only(bottom: Dimensions.heigth10 / 2),
+                    child: Container(
+                      // height: Dimensions.heigth30,
+                      margin: EdgeInsets.only(left: Dimensions.width45),
+                      child: TextField(
+                        decoration: InputDecoration(
+                            icon: Padding(
+                              padding:
+                                  EdgeInsets.only(top: Dimensions.heigth10),
+                              child: Icon(Icons.mail),
+                            ),
+                            hintText: 'Mail',
+                            border: InputBorder.none),
                       ),
-                      BoxShadow(
-                        color: Color.fromARGB(255, 192, 192, 192),
-                        offset: Offset(1, 0),
-                      )
-                    ]),
-                margin: EdgeInsets.all(15.0),
-                padding: EdgeInsets.only(bottom: Dimensions.heigth10 / 2),
-                child: Container(
-                  // height: Dimensions.heigth30,
-                  margin: EdgeInsets.only(left: Dimensions.width45),
-                  child: TextField(
-                    
-                    decoration: InputDecoration(
-                        hintText: 'Mail', border: InputBorder.none),
+                    ),
                   ),
-                ),
+                  Container(
+                    height: Dimensions.heigth45 * 1.2,
+                    decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.circular(Dimensions.radius30),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromARGB(255, 192, 192, 192),
+                              blurRadius: 5.0,
+                              offset: Offset(0, 3)),
+                          BoxShadow(
+                            color: Color.fromARGB(255, 192, 192, 192),
+                            offset: Offset(-1, 0),
+                          ),
+                          BoxShadow(
+                            color: Color.fromARGB(255, 192, 192, 192),
+                            offset: Offset(1, 0),
+                          )
+                        ]),
+                    margin: EdgeInsets.only(
+                        right: Dimensions.width15, left: Dimensions.width15),
+                    padding: EdgeInsets.only(bottom: Dimensions.heigth10 / 2),
+                    child: Container(
+                      // height: Dimensions.heigth30,
+                      margin: EdgeInsets.only(left: Dimensions.width45),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          hintText: 'Password',
+                          border: InputBorder.none,
+                          icon: Padding(
+                            padding: EdgeInsets.only(top: Dimensions.heigth10),
+                            child: Icon(Icons.lock),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ]),
               )
             ],
           )),
